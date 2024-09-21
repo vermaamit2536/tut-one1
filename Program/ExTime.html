@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /* var today = new Date();
+ 
+         var dd = today.getDate();
+ 
+         var mm = today.getMonth() + 1;
+ 
+         var yyyy = today.getFullYear()
+ 
+         if (dd >= 10) {
+             dd = '0' + dd
+         };
+ 
+         if (mm >= 10) {
+             mm = '0' + mm
+         };
+ 
+         document.write(dd + '/' + mm + '/' + yyyy)
+         
+
+        let num = prompt('enter the value');
+
+        var fact = 1;
+
+        if (num == 0) {
+            document.write(`the factorial of fact is ${num}`);
+        } else if (num < 0) {
+            document.write('the factorial of fact is not possible')
+        } else {
+            for (var i = 0; i <= num; i++) {
+                fact = fact * i
+            }
+            document.write(`the factor of factorial : ${num} is ${fact} `)
+        }
+    
+
+        let num = prompt('plz enter a person');
+        var fact = 1;
+
+        function factor(n) {
+            if (n > num) {
+                return;
+            }
+            var temp = fact;
+
+            fact = fact * n
+            document.write(temp + 'X' + '=' + fact);
+
+            n++;
+            factor(n)
+        }
+        factor(4)
+        
+
+        function table(num) {
+            for (var i = 1; i = 10; i++) {
+                var x = i * num
+            }
+            document.write(`${num} * ${i} = ${x}`)
+        }
+        table(5);
+        
+        var a = 0, b = 1;
+
+        for (var i = 0; i <= 9; i++) {
+            var temp = a + b;
+            document.write(temp + '<br>')
+            a= b;
+            b = temp
+        }
+            */
+
+        let x = prompt('enter the num1');
+
+        let y = prompt('enter the num2')
+
+        let opr = prompt('Select among , +,-,/,*');
+
+        switch (opr) {
+            case "+":
+                var res = parseFloat(x) + parseFloat(y);
+                document.write(`${x}+ ${y} = ${res}`)
+                break;
+
+            case "-":
+                var res = parseFloat(x) - parseFloat(y);
+                document.write(`${x} - ${y} = ${res}`)
+                break;
+            case "/":
+                var res = parseFloat(x) / parseFloat(y);
+                document.write(`${x}/ ${y} = ${res}`)
+                break;
+            case "*":
+                var res = parseFloat(x) * parseFloat(y);
+                document.write(`${x}* ${y} = ${res}`)
+                break;
+            default:
+                console.log('Invalid opretor');
+        }
+
+
+    </script>
+
+</body>
+
+</html>

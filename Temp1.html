@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'poppins', 'sans-serif';
+        }
+
+        body {
+            color: #ededed;
+            background: #081b29;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            top: 0;
+            left: 0;
+            justify-content: space-between;
+            z-index: 100;
+            position: fixed;
+            width: 100%;
+            padding: 10px 10%;
+            background: #08273d;
+        }
+
+        .logo {
+            color: #fff;
+            position: relative;
+            text-decoration: none;
+            color: #fff;
+            text-decoration: none;
+            font-size: 25px;
+            cursor: default;
+            opacity: 0;
+            animation: slide 1s ease forwards;
+        }
+
+        .navbar a {
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 30px;
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            transition: .3s;
+            animation: slidetop .5s ease forwards;
+
+        }
+        .navbar a:hover {
+            color: aqua;
+        }
+        .home {
+            position: relative;
+            width: 100%;
+            justify-content: space-between;
+            height: 100vh;
+            display: flex;
+            background-position: center;
+            align-items: center;
+            height: 100vh;
+            padding: 100px 10% 0;
+            background: #081b29;
+
+        }
+
+        .home-content {
+            max-width: 600px;
+        }
+
+        .home-content h3 {
+            content: " ";
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            animation: slidebot 1s ease forwards;
+            transition: .7s;
+        }
+        
+
+        .home-content h3:nth-of-type(2) {
+            margin-bottom: 30px;
+            animation: slidetop 1s ease forwards;
+            animation-delay: .7s;
+        }
+
+
+        .home-content h3 span {
+            color: #0ef;
+            margin-left: 10px;
+        }
+
+        .home-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #fff;
+            margin: -3px 0;
+            opacity: 0;
+            animation: slidebtn 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .home-content p {
+            font-size: 20px;
+            color: #fff;
+            opacity: 0;
+            animation: slideleft 1s ease forwards;
+            animation-delay: 1s;
+            margin-bottom: -30px;
+        }
+
+        .home-site {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 4px solid pink;
+
+        }
+
+        .icon a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 3px solid #0ef;
+            color: #0ef;
+            border-radius: 50%;
+            list-style: none;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 70px 15px 30px 0;
+            opacity: 0;
+            animation: slideleft 1s ease forwards;
+            animation-delay: calc(.2s*var(--i));
+        }
+
+        .icon a:hover {
+            background: #0ef;
+            color: #081b29;
+            box-shadow: 0 0 20 #0ef;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 40px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 16px;
+            color: #081b29;
+            animation: slidetop 1s ease forwards;
+            animation-delay: 1s;
+            box-shadow: 0 0 50px #0ef;
+            opacity: 0;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 75px cyan, 0 0 100px cyan, 0 0 200px cyan;
+            background: #0ef;
+        }
+
+        .home-site img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-sizing: border-box;
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 75px cyan, 0 0 100px cyan, 0 0 200px cyan;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .about-img {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+
+        .about-img img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            margin-left: 30px;
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 75px cyan, 0 0 100px cyan, 0 0 200px cyan;
+
+        }
+
+        h2 {
+            font-size: 60px;
+            margin-top: 100px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        h2 span {
+            color: #0ef;
+        }
+
+        h4 {
+            font-size: 29px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.7;
+            margin: 15px 0 30px;
+        }
+
+        p {
+            color: aliceblue;
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 4rem;
+        }
+
+        #services {
+            font-size: 20px;
+            margin-bottom: 4rem;
+            line-height: 1.4;
+            color: aliceblue;
+        }
+
+        .contanier {
+            padding: 90px;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 70px;
+            font-size: 60px;
+        }
+
+        .subtitle span {
+            color: #0eeff0;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+            margin-left: 30px;
+        }
+
+        .services-list div {
+            background-color: transparent;
+            font-size: 13px;
+            font-weight: 13px;
+            padding: 40px;
+            border-radius: 20px;
+            border-right: 10px;
+            transition: background 0.5s, transform 0.5s;
+            box-shadow: 1px 1px 20px #012290f7,
+                1px 1px 40px #0553b8f7;
+
+        }
+
+        .services-list div i {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        .services-list div h2 {
+            font-size: 30px;
+            font-size: 500;
+            margin-bottom: 15px;
+        }
+
+        .services-list div a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .read {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 16px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            animation: slidetop 2s ease forwards;
+            animation-delay: 1s;
+            box-shadow: 0 0 50px #0ef;
+            opacity: 0;
+        }
+
+        .read:hover {
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 75px cyan, 0 0 100px cyan, 0 0 200px cyan;
+        }
+
+        .services-list div:hover {
+            transform: translateY(-10px);
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 60px;
+            padding-bottom: 70px;
+            padding-top: 30px;
+            margin-top: 50px;
+        }
+
+        .sub-title span {
+            color: #0ef;
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .container1 {
+            width: 600px;
+            height: 500px;
+            padding: 75px 90px;
+        }
+
+        .heading1 {
+            text-align: center;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 5px;
+            margin-bottom: 50px;
+        }
+
+        .bar {
+            font-size: 23px;
+        }
+
+        .Technical-bars .bar {
+            margin-top: 40px 0;
+        }
+
+        .Technical-bars .bar:first-child {
+            margin-top: 0;
+        }
+
+        .Technical-bars .bar:last-child {
+            margin-bottom: 0;
+        }
+
+        .Technical-bars .bar .info {
+            margin-bottom: 5px;
+        }
+
+        .Technical-bars .bar .info span {
+            font-size: 17px;
+            font-weight: 500;
+            animation: showText 0.5s 1s linear forwards;
+            opacity: 0;
+        }
+
+        .Technical-bars .bar .progress-line {
+            position: relative;
+            border-radius: 10px;
+            width: 100%;
+            height: 5px;
+            background-color: #000;
+            animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        @keyframes animate {
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .Technical-bars .bar .progress-line span {
+            position: absolute;
+            height: 100%;
+            background-color: #0ef;
+            border-radius: 10px;
+            animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        .progress-line.html span {
+            width: 90%;
+        }
+
+        .progress-line.css span {
+            width: 55%;
+        }
+
+        .progress-line.javascript span {
+            width: 80%;
+        }
+
+        .progress-line.pythan span {
+            width: 65%;
+        }
+
+        .progress-line.react span {
+            width: 75%;
+        }
+
+        .progress-line span::after {
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+            animation: showText 0.5s 1.5s linear forwards;
+            opacity: 0;
+        }
+
+        .progress-line.html span::after {
+            content: "90%";
+        }
+
+        .progress-line.css span::after {
+            content: "55%";
+        }
+
+        .progress-line.javascript span::after {
+            content: "80%";
+        }
+
+        .progress-line.pythan span::after {
+            content: "65%";
+        }
+
+        .progress-line.react span::after {
+            content: "75%";
+        }
+
+        .progress-line span::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-top-color: #000;
+            top: -10px;
+            right: 0;
+            animation: showText 0.5s 1.5s linear forwards;
+            opacity: 0;
+        }
+
+        @keyframes showText {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .radial-bars {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            position: relative;
+
+
+        }
+
+        .radial-bars .radial-bar {
+            width: 50%;
+            height: 170px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .radial-bars .radial-bar svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: 120px;
+            height: 160px;
+        }
+
+        .radial-bars .radial-bar .progress-bar {
+            stroke-width: 10;
+            stop-color: black;
+            fill: transparent;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 502;
+            stroke-linecap: round;
+            animation: animate-bar 1s linear forwards;
+        }
+
+        @keyframes animate-bar {
+            100% {
+                stroke-dashoffset: -1;
+            }
+        }
+
+        .path {
+            stroke-width: 10;
+            stroke: #0ef;
+            fill: transparent;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 502;
+            stroke-linecap: round;
+        }
+
+        .path-1 {
+            animation: animate-path1 1s 1s linear forwards;
+        }
+
+        .path-2 {
+            animation: animate-path2 1s 1s linear forwards;
+        }
+
+        .path-3 {
+            animation: animate-path3 1s 1s linear forwards;
+        }
+
+        .path-4 {
+            animation: animate-path4 1s 1s linear forwards;
+        }
+
+        @keyframes animate-path1 {
+            100% {
+                stroke-dashoffset: 50;
+            }
+
+        }
+
+        @keyframes animate-path2 {
+            100% {
+                stroke-dashoffset: 175;
+            }
+
+        }
+
+        @keyframes animate-path3 {
+            100% {
+                stroke-dashoffset: 125;
+            }
+
+        }
+
+        @keyframes animate-path4 {
+            100% {
+                stroke-dashoffset: 75;
+            }
+
+        }
+
+        .radial-bar .percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 500;
+            animation: showText 0.5s 1s linear forwards;
+            opacity: 0;
+        }
+
+        .radial-bar .text {
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            text-align: center;
+            bottom: -5px;
+            transform: translate(-50px);
+            font-size: 17px;
+            font-weight: 500;
+            animation: showText 0.5s 1s linear forwards;
+        }
+
+        .main-text {
+            padding-top: 100px;
+        }
+
+        .main-text h2 {
+            font-size: 60px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .main-text h2 span {
+            color: #0ef;
+        }
+
+        .portfolio-content {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .row {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .row img {
+            width: 400px;
+            height: 300px;
+            border-radius: 8px;
+            margin-left: 20px;
+            margin-right: 20px;
+            transition: transform 0.5s;
+        }
+
+        .layer {
+            width: 100%;
+            height: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), #0ef);
+            position: absolute;
+            border-radius: 8px;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 40px;
+            transition: height 0.5s;
+        }
+
+        .layer h5 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .layer p {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .layer i {
+            color: red;
+            margin-top: 10px;
+            font-size: 20px;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .row:hover img {
+            transform: scale(1.1);
+        }
+
+        .row:hover .layer {
+            height: 100%;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 3rem;
+            padding-left: 30px;
+            margin-top: 130px;
+        }
+
+        .contact-text h2 {
+            font-size: 90px;
+            line-height: 1;
+            text-align: center;
+            margin-left: -100px;
+            margin-top: -30px;
+
+        }
+
+        .contact-text h2 span {
+            color: #0ef;
+        }
+
+        .contact-text h4 {
+            margin: 15px 0;
+            color: rgb(228, 228, 228);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .contact-text p {
+            color: rgb(177, 177, 177);
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-list {
+            margin-bottom: 3rem;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .contact-list i {
+            display: inline-block;
+            color: #0ef;
+            font-size: 20px;
+            font-weight: 600;
+            transition: all .40s ease;
+        }
+
+        .contact-list li a:hover {
+            transform: scale(1.01) translateY(-5px);
+            color: #0ef;
+        }
+
+        .contact-icon i {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #0ef;
+            font-size: 20px;
+            color: #0ef;
+            text-decoration: none;
+            margin: 30px 15px 30px 0;
+            transition: .5s ease;
+            opacity: 0;
+            animation: slideLeft 1s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+        }
+
+        .contact-icon i:hover {
+            background: #0ef;
+            color: #000;
+            box-shadow: 0 0 20px #0ef;
+        }
+
+        .contact-form form {
+            position: relative;
+        }
+
+        .contact-form form input,
+        form textarea {
+            border: none;
+            outline: none;
+            width: 90%;
+            padding: 18px;
+            background-color: #55555577;
+            color: #000;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 220px;
+        }
+
+        .contact-form form .send {
+            display: inline-block;
+            padding: 14px 60px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 18px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            animation: slidetop 2s ease forwards;
+            animation-delay: 1s;
+            box-shadow: 0 0 50px #0ef,
+                0 0 25px #0ef;
+            opacity: 0;
+        }
+
+        .contact-form form .send:hover {
+            box-shadow: 0 0 5px cyan,
+                0 0 25px cyan, 0 0 75px cyan,
+                0 0 100px cyan, 0 0 200px cyan;
+        }
+
+        .last-text p {
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: rgb(7, 85, 91);
+            font-weight: 300;
+            margin-top: 70px;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 2.1rem;
+            right: 2.1rem;
+        }
+
+        .top i {
+            color: #000000;
+            background: #0ef;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideleft {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slidetop {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        }
+
+        @keyframes slidebot {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slidebtn {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <ul class="navbar">
+            <a href="#About" style="--i:1" class="active">About</a>
+            <a href="#Services" style="--i:2">Services</a>
+            <a href="#Skills" style="--i:3">Skills</a>
+            <a href="#project1" style="--i:4">Project</a>
+            <a href="#Contact" style="--i:5">Contact</a>
+        </ul>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h3>Hello , It's Me</h3>
+            <h1>Amit-Verma</h1>
+            <h3>And I'm a<span class="first"></span></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit Natus maiores <br> alias, magni similique
+                aliquam
+                consequatur eius veniam! Eum, accusantium animi . . . .</p>
+            <div class="icon">
+                <a href="#" style="--i:6"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" style="--i:7"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" style="--i:8"><i class="fa-brands fa-github"></i></a>
+                <a href="#" style="--i:9"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <a href="" class="btn">More About Me</a>
+        </div>
+        <div class="home-site">
+            <img src="Demo/Picture/mens1.jpg" alt="">
+        </div>
+    </section>
+    <section class="about pt-5" id="About">
+        <div class="about-img">
+            <img src="Demo/Picture/mens2.jpg" alt="">
+        </div>
+        <div class="adout-text">
+            <h2>About<span>Me</span></h2>
+            <h4>Full Stack Devloper!</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam architecto culpa repellendus id inventore
+                et nostrum officiis ipsum harum quisquam quae, quia veritatis alias dolorum eius! Sequi qui ab dicta nam
+                culpa ducimus architecto facere, commodi, cupiditate, neque ipsum? Officiis alias eius pariatur. Beatae,
+                optio. Nulla consectetur optio, dolore dicta, molestias, natus alias expedita eveniet impedit temporibus
+                vitae similique harum voluptatibus blanditiis omnis. Animi voluptas nam debitis. Pariatur minima nam
+                nesciunt inventore architecto laborum nemo, earum eligendi sapiente odit voluptatem perspiciatis,
+                repudiandae ea ullam praesentium? Voluptatum distinctio dignissimos porro ea praesentium? Pariatur
+                consequatur porro nisi cumque sed blanditiis quibusdam consequuntur. <br> <br><br>
+                <a href="#" class="btn">More About Me</a>
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="services" id="Services">
+            <div class="container">
+                <h1 class="subtitle pt-5">My <span>Services</span></h1>
+                <div class="services-list pt-3">
+                    <div>
+                        <i class="fa-solid fa-code-compare" style="color: #0eeff0;"></i>
+                        <h2>UI/UX Designer</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat exercitationem ratione
+                            voluptates, officia ipsam quasi dolorem.</p>
+                        <a href="#" class="read">learn More</a>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-apple" style="color: #0eeff0;"></i>
+                        <h2>UI/UX Designer</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat exercitationem ratione
+                            voluptates, officia ipsam quasi dolorem.</p>
+                        <a href="#" class="read">learn More</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-crop-simple" style="color: #0eeff0;"></i>
+                        <h2>UI/UX Designer</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat exercitationem ratione
+                            voluptates, officia ipsam quasi dolorem.</p>
+                        <a href="#" class="read" onclick="click('Welcome To my responsive website')">learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h1 class="sub-title pt-5">My <span>Skills</span></h1>
+    <section class="section">
+        <div class="container1" id="Skills">
+            <h1 class="heading1">Technical Skills</h1>
+            <div class="Technical-bars">
+                <div class="bar"><i style="color: #c95d2e;" class="fa-brands fa-html5"></i>
+                    <div class="info">
+                        <span>HTML</span>
+                    </div>
+                    <div class="progress-line html">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color: #147bbc;" class="fa-brands fa-css3-alt"></i>
+                    <div class="info">
+                        <span>CSS</span>
+                    </div>
+                    <div class="progress-line css">
+                        <span></span>
+                    </div>
+                </div>
+                <br>
+                <div class="bar"><i style="color: #b0bc1e;" class="fa-brands fa-node-js"></i>
+                    <div class="info">
+                        <span>JAVASCRIPT</span>
+                    </div>
+                    <div class="progress-line javascript">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color: #c32ec9;" class="fa-brands fa-python"></i>
+                    <div class="info">
+                        <span>Pythan</span>
+                    </div>
+                    <div class="progress-line pythan">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color: #69bcbc;" class="fa-brands fa-react"></i>
+                    <div class="info">
+                        <span>react</span>
+                    </div>
+                    <div class="progress-line react">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <h1 class="heading1">Professional</h1>
+            <div class="radial-bars">
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">90%</div>
+                    <div class="text">creativity</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">70%</div>
+                    <div class="text">Cumnication</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">50%</div>
+                    <div class="text">Problem Solving</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">65%</div>
+                    <div class="text">Team Work</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="Portfolio" id="Project">
+            <div class="main-text" id="project1">
+                <h2>Latest <span>Project</span></h2>
+                <div class="portfolio-content pt-5">
+                    <div class="row">
+                        <img src="ui.jpg" alt="">
+                        <div class="layer">
+                            <h5>UI/UX Design</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequatur nisi asperiores
+                                nesciunt dignissimos. Molestiae, quia. Culpa quod eum deleniti?</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="ui1.jpg" alt="">
+                        <div class="layer">
+                            <h5>UI/UX Design</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequatur nisi asperiores
+                                nesciunt dignissimos. Molestiae, quia. Culpa quod eum deleniti?</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="ui.jpg" alt="">
+                        <div class="layer">
+                            <h5>UI/UX Design</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequatur nisi asperiores
+                                nesciunt dignissimos. Molestiae, quia. Culpa quod eum deleniti?</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="Contact">
+        <div class="contact-text">
+            <h2>Contact<span>Me</span></h2>
+            <br>
+            <h4>Let's work together</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, ipsam deserunt quam itaque quod
+                alias cum voluptas fuga explicabo distinctio quo dolor ex cumque vel.</p>
+            <div class="contact-list">
+                <li><i class="fa-solid fa-paper-plane"></i> contact@gmail.com</li>
+                <li><i class="fa-solid fa-phone"></i> 0123456789</li>
+            </div>
+            <div class="contact-icon">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-solid fa-wifi"></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <input type="" placeholder="Enter Your name" required>
+                <input type="email" placeholder="Enter Your Email" required>
+                <input type="" placeholder="Enter Your Subject">
+                <textarea name="" id="" cols="40" rows="10" placeholder="Entet Your"></textarea>
+                <br> <br>
+                <input type="submit" value="submit" class="send">
+            </form>
+        </div>
+    </section>
+    <div class="last-text">
+        <p>Developed with love by Amit Verma @ 2024 </p>
+    </div>
+    <a href="a" class="top"><i class="fa-solid fa-circle-up"></i></a>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".first", {
+            String: ["Frantend Devloper", "Web Devloper", "Youtuber"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
+    </script>
+</body>
+
+</html>

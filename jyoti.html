@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*    var a = prompt('');
+    
+            if (a == 10) {
+                document.write('a is not equal to 10')
+            } else if (a == 15) {
+                document.write('a is not equal to 15')
+            } else if (a == 20) {
+                document.write('a is equal to 20')
+            } else {
+                document.write('a is not equal to any number')
+            }
+                
+
+        let x = prompt('enter the name');
+
+        switch (x) {
+            case "amit":
+                alert("Amit Calling")
+                break;
+
+            case "arnav":
+                alert("Arnav Calling")
+                break;
+
+
+            case "riyansh":
+                alert("Riyansh Calling")
+                break;
+
+
+            case "khushi":
+                alert("Khushi Calling")
+                break;
+
+
+            case "anshu":
+                alert("Anshu Calling")
+                break;
+
+
+            case "muskaan":
+                alert("Muskaan Calling")
+                break;
+
+
+            case "jyoti":
+                alert("Jyoti Calling")
+                break;
+
+            case "nitin":
+                alert("Nitin Calling")
+                break;
+
+
+            case "abhishek":
+                alert("Abhishek Calling")
+                break;
+
+
+            default: {
+                alert("not matching any name")
+            }
+        }
+
+        var num = prompt('Enter the number');
+
+        var fact = 1;
+
+        if (num == 0) {
+            document.write(`the factorial of ${num} is 1`)
+        } else if (num < 0) {
+            document.write(`the factorial -ive num is not possible`)
+        } else {
+            for (var i = 1; i <= num; i++) {
+                fact = fact * i
+            }
+            document.write(`The factorial of ${num} is ${fact}`);
+        }
+            
+        var num = prompt('Enter the number');
+
+        var fact = 1;
+        function factor(n) {
+            if (n > num) {
+                return;
+            }
+ 
+            var temp = fact;
+            fact = fact * n
+
+            document.write(temp + "num" + "=" + fact);
+            n++;
+            factor(n)
+        }
+        factor(2)
+        
+
+
+        function table(num) {
+            for (var i = 1; i <= 10; i++) {
+
+                var res = i * num
+
+                document.write(`${num}*${i}= ${res}  <br>`)
+            }
+        }
+        table(5)
+        
+        var a = 0, b = 1;
+        for (let i = 0; i <= 8; i++) {
+            var temp = a + b;
+            document.write(temp)
+            a = b;
+            b = temp
+        }
+            
+
+
+            let num1 = prompt('Enter the 1st number');
+
+            let num2 = prompt('Enter the 2nd number');
+
+            let oprt = prompt('select among +,-,*,/');
+
+
+            switch(oprt){
+                case'+':
+                var res = parseFloat(num1)+parseFloat(num2);
+                document.write(`${num1}+${num2} = ${res}`)
+            break;
+
+            case'-':
+                var res = parseFloat(num1)-parseFloat(num2);
+                document.write(`${num1}-${num2} = ${res}`)
+            break;
+
+            case'*':
+                var res = parseFloat(num1)*parseFloat(num2);
+                document.write(`${num1}*${num2} = ${res}`)
+            break;
+
+            case'/':
+                var res = parseFloat(num1)/parseFloat(num2);
+                document.write(`${num1}/${num2} = ${res}`)
+            break;
+
+            default:
+            document.write('invalid opretaors')
+            }
+
+
+        let num = prompt('enter the number');
+
+        if (num == 1) {
+            document.write(`${num} is neigher prime nor composite`);
+        } else if (num < 1) {
+            document.write(`${num} is not a prime number`)
+        } else {
+            for (let i = 2; i <= num; i++) { 
+                if (num % 2 == 0) {
+                    var res = `${num} is not a prime number`
+                    break;
+                } else {
+                    var res = `${num} is prime number`
+                }
+            }
+        }
+        document.write(res)
+
+
+        let num = prompt('plz enter the nummber')
+        for(let i = 1; i<=num; i++){
+            if(num%i==0){
+                document.write(i)
+            }
+        }
+        function sum(num) {
+            if (num > 0) {
+                return num + sum(num - 1);
+            } else {
+                return num;
+            }
+        }
+        var res = sum(30);
+        document.write(res)
+        
+
+        let a = prompt('enter the number');  
+        let b = prompt('enter the number');
+
+        var c = parseInt(a) + parseInt(b)
+        document.write(" The sum of" + a + "and" + b + "is :" + c);
+        
+
+        var a = 100;
+        var b = 70;
+        var c = 10;
+        var s = (a+b+c)/2
+        var temp = s*(s-a)*(s-b)*(s-c)
+        var area = Math.sqrt(temp)
+        document.write(area)
+
+    
+
+        var a = parseInt(prompt('enter the value'));
+        var b = parseInt(prompt('enter the value'));
+
+        document.write(`the value of a is : ${a} <br> The value of b is : ${b} <br>`);
+
+
+
+        var temp;
+        temp = a;
+        a = b;
+        b = temp
+        document.write(`After swapping the value of a is :${a}/
+        The value of b is :${b}`)
+        
+
+        let num = prompt('Enter the number');
+
+        let b = Math.sqrt(num)
+
+        document.write(b)
+
+        
+
+        let promise = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                document.write('Async task is complete');
+                resolve()
+            }, 3000)
+        })
+        promise.then(function () {
+            document.write('Promise Consumed')
+        });
+        
+
+        let promiseOne = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                let error = true;
+                if (!error) {
+                    resolve({ username: 'amit', gmail: 'verma123gmail.com' })
+                } else {
+                    reject('Error : Something went wrong')
+                }
+            }, 5000)
+        });
+        promiseOne.then(function (username) {
+            document.write(username);
+        }).then(function (error) {
+            document.write(error)
+        })
+        
+
+            let primeObj={
+                name:'alok',
+                age:45
+            
+            }
+            document.write(primeObj.name)
+
+            
+
+        function add(a, b) {
+            let addition;
+            addition = a + b;
+            return addition
+        }
+
+        let s = add(34, 454);
+
+        document.write(s)
+
+        
+
+        function factorial(x){
+            if(n===0){
+                return 1;
+            }
+            else{
+                return x*factorial(n-1)
+            }
+        }
+        const num = 3;
+
+        if(num>0){
+            let res = factorial(num)
+        }
+        document.write(`The factorial of ${num} is ${res}`)
+
+
+        ******************String Methods***********************
+
+
+        let msg = "Orange, banana, apple, grapes";
+
+        let part = msg.slice(5,15)
+        let  part = msg.slice()
+        document.write(part)
+        
+        let msg = "Orange, banana, apple, grapes";
+
+        let part = msg.slice(-17,-9);
+
+        document.write(part)
+        *
+
+        let msg = "Orange, banana, apple, grapes";
+
+        let part = msg.substring(13,7);
+
+        document.write(part)
+        
+
+        let text = "Please visit microsoft";
+
+        let mss = text.replace("vi", "W3");
+        var msg = text.replaceAll("vi","di")
+
+
+        document.write(mss)
+        
+
+        let text = "Mr. blue has a blue house";
+
+        let smg = text.search("house")
+
+        document.write(smg)
+    
+
+        let text = "how are you doing today";
+
+        const myarray = text.split(" ");
+
+         let word = myarray[3]
+
+        document.write(word)
+        
+
+        let text = "Hello welcome ot the universe";
+
+        text.startsWith("Hello")
+
+        document.write(text)
+
+        let text = "Hello World";
+
+        let res = text.toString();
+
+        document.write(res)
+
+        
+
+        let msg = "Javascript is very hard";
+
+        let res = msg.includes("script");
+
+        document.write(res)
+
+        ***************************Array Methods**********************
+
+        let arr = ["red", "black","blue"];
+
+        arr.push("Green");
+        document.write(arr)
+        let arr = ["red","black","blue"];
+        arr.pop("");
+        document.write(arr)
+        
+        let obj = {
+            firstName:'Amit',
+            class: 'B.com',
+            Marks:{
+                English:34,
+                Math:70
+            }
+        }
+
+         document.write(obj.Marks.English)
+
+         
+
+         const person={
+            name:'john',
+            age:40,
+
+            greet:function(){
+                document.write('My name is'+ " "+ this.name)
+            }
+         }
+         person.greet();
+         
+
+         function person(){
+            this.name= "John",
+            this.age = "45"
+         }
+
+         let person= new person();
+         document.write(person)
+
+       function Person(){
+        this.name="Alok",
+        this.age=45,
+        this.greet= function(){
+            document.write("hello");
+        }
+       }
+        const person1 = new Person();
+
+        const person2 = new Person();
+
+        document.write(person1.name);
+
+        document.write(person2[greet()]);
+
+        
+
+         function Person(person_name,person_age,person_gender){
+            this.name=person_name;
+            this.age=person_age;
+            this.gender=person_gender;
+
+            this.greet= function(){
+                return('Hii'+''+this.name)
+            }
+         }
+
+         let person1 = new Person('John','45','Male');
+
+         let person2 = new Person('Abhishek','22','Male');
+
+         document.write(person1);
+
+         document.write(person2.age)
+
+         
+
+         function Person(){
+            this.name+'Amit',
+            this.age = 56
+         }
+
+         let person1 = new Person();
+         let person2 = new Person();
+
+         Person.prototype.gender='male';
+
+         document.write(person1.gender);
+
+         document.write(person2.gender)
+
+         
+
+         let student = {
+            firstName :'Monika',
+            get getName(){
+                return this.firstName
+            }
+         }
+
+         document.write(student.firstName)
+         document.write(student.getName)
+         document.write(student.getName())
+
+
+
+        const student = {
+            firstName: 'Monica'
+        }
+        Object.defineProperty(student, "getName", {
+            get: function () {
+                return this.firstName;
+            }
+        });
+
+
+        Object.defineProperty(student, "changeName", {
+            set: function (value) {
+                this.firstName = value;
+            }
+        });
+
+        console.log(student.firstName);
+
+        student.changeName = 'Sarah';
+
+        console.log(student.firstName); 
+    
+
+        function Person() {
+            this.name = 'merchant',
+            this.age = 34
+        }
+        let person1 = new Person();
+        let person2 = new Person();
+
+        person.prototype.gender = 'male';
+
+        document.write(Person.prototype);
+
+
+        document.write(person1.gender)
+
+        document.write(person2.gender)
+
+
+        function Person(){
+            this.name ="john",
+            this.age = 23
+        }
+
+        const person1 = new Person();
+
+        const person2 = new Promise();
+
+        Person.prototype.greet = function(){
+            document.write('hello'+ ' ' + this.name);
+        }
+        person1.greet();
+    
+
+        function person() {
+            this.name = 'Abhishek'
+        }
+        person.prototype.age = 20;
+
+        let persone2 = new person();
+
+
+        document.write(persone2.age);
+
+        person.prototype = { age: 50 };
+ 
+        let person3 = new person()
+        document.write(person3.age);
+
+
+let num = 100, demonitor = 'a';
+
+try{
+    document.write(num/demonitor);
+
+    document.write(a);
+}
+catch(error){
+    document.write('An error Caught');
+    document.write('error message : '+ error)
+}
+finally{
+    document.write('Finally will be excuted every time ')
+}
+    
+
+    function greet(){
+        document.write('hello world')
+    }
+
+    let setInterval=setTimeout(greet,3000);
+
+    document.write('Id: '+ setInterval)
+
+    
+
+    function showTime(){
+        let dataTime = new Date();
+
+        let time = dataTime.toLocaleTimeString();
+        document.write(time)
+
+        setTimeout(showTime,4000)
+
+    }
+    showTime();
+    
+
+    let num = 40;
+
+    try{
+        if(num>50){
+            
+        }else{
+            throw new error ('The num is low')
+        }
+    }
+    catch(error){
+        document.write('An error Caught');
+        document.write('Error message: '+ error);
+    }
+
+
+        let count = 0;
+
+        function  count(){
+            count +=1;
+
+            document.write(count)
+
+        }
+        setTimeout(count, 3000);
+        clearTimeout(id);
+        document.write('settime out stopped');
+
+        *
+        let sum = (a,b)=>{
+            let res = a+b
+            return res()
+        }
+
+        res(40,57)
+
+        document.write(res)
+        
+        
+
+        let first_persone= {
+            name : "jack",
+            age:34
+        }
+        let second_person = first_persone;
+        document.write(second_person.name);
+        document.write(first_persone.name);
+    
+
+        let obj = {
+            name:'peter',
+            address :{
+                city:'noida',
+                state:'up'
+            }        }
+
+        let user = JSON.parse(JSON.stringify(obj));
+
+        user.address.city = 'gurgaon';
+
+        document.write("object is : ", obj);
+
+        document.write('user is : ', user.city);
+
+        
+
+        let promise = new Promise(function(resolve,reject){
+
+            resolve('Asynd is Rsolved')
+        },3000) 
+        promise.then(function(){
+            document.write('Resolve this Fucntion')
+        })
+        
+
+        const con = 10;
+        const firstName = 10;
+
+        document.write(data)
+        
+        let x = 20;
+        if (x == 20) {
+            document.write('boolean value is true')
+        } else if (x == 30) {
+            document.write('boolean value is truee111')
+
+        } else if (x == 20) {
+            document.write('boolean value is true')
+        } else {
+            document.write('boolean value is not matched')
+        }
+    
+
+        let y = prompt(' ');
+
+        if ('5' == y) {
+            document.write('5 you are allow into the class room');
+            alert('***5 you are allow into the class room')
+        } else if ('6' == y) {
+            document.write('6 you are allow into the class room');
+            alert('***6 you are allow into the room')
+        }else{
+            document.write('you are not allow into the class room')
+            alert('you are not allow into the class room')
+        }
+
+    
+
+        let x = prompt('enter the name');
+
+        switch (x) {
+            case 'abhishek':
+                alert('abhishek')
+                break;
+
+            case 'monu':
+                alert('monu')
+                break;
+
+            case 'dheeraj':
+                alert('dheeraj')
+                break;
+
+            case 'ashok':
+                alert('ashok')
+                break;
+
+            default: {
+                alert('unmatched')
+            }
+        }
+        for(let i = 1; i<10; i++){
+            document.write(i)
+        }
+
+        
+
+        let sum = 0;
+
+        const n = 100;
+
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+        }
+
+        document.write('sum','=', sum)
+        
+
+        let sum = 1, n = 10;
+        
+
+        let i = 1, n = 10;
+
+        while (i <= n) {
+            document.write(i)
+            i += 1
+        }
+        let i = 1, n = 10;
+
+        do {
+            document.write(i);
+            i++
+        } while (i <= n)
+         
+
+         let tex = "banana, apple ,orange";
+
+         let part = tex.slice(7,13);
+         let go = tex.slice(7)
+
+         document.write(go);
+
+         
+         let myarr = [[1,2],[3,4],[5,6]];
+        let  mynew = myarr.flat();
+        document.write(mynew);
+        
+
+        function person(){
+            this.name = "Amit",
+            this.age = "23"
+        }
+
+        const person1 = new person();
+
+        document.write(person1.name)
+        
+
+        function person(){
+            this.name ="Amit",
+            this.age = "23",
+            this.greet=function(){
+                document.write('Hello')
+            } 
+        }
+
+        let person1 = new person();
+        document.write(person1.greet());
+    
+
+        function person(person_name, person_age, person_gender) {
+            this.name = person_name,
+                this.age = person_age,
+                this.gender = person_gender
+        }
+
+        this.greet = function () {
+            return ('hii' + ' ' + this.name)
+        }
+
+        const person1 = new person('john',56,'male');
+
+        const person2 = new person('sahil',30,'male');
+
+        document.write(person1.gender)
+
+    
+     
+        const student = { 
+            firstName: 'Monica',
+            set changeName(newName) {
+                this.firstName = newName;
+            }
+        };
+        student.changeName = 'Sarah';
+        document.write(student.firstName);
+        
+
+        function fact(n) {
+            if (n === 0) {
+                return 1
+            }
+            else {
+                return n * fact(n - 1)
+            }
+        }
+
+        **********************For Loop ***********************
+
+        let i = 10;
+
+        for(let i = 0; i<=10;i++){
+            document.write(i+'<br>')
+        }
+
+
+    ************************While Loop*****************
+
+        let i = 1;
+
+        while (i <= 10) {
+            document.write(i +'<br>')
+            i += 1
+        }
+
+        *****************************Do While loop******************
+
+
+        let i = 1;
+
+        do {
+            document.write(i + '<br>')
+            i++;
+        } while (i <= 10)
+
+        ***************** Statement***********
+
+        statement are program instruction use to control the excution flow
+
+        type are four -----
+
+        selection statements>>>>> selection statement are decision making statement in programing
+        if, if else, if else if, switch=>
+
+        if==>> if the evaluates the content only if expression is true 
+
+        Exam=>
+
+        let x = 20 ;
+
+        if(x ==20){
+        document.write('X value is 20 value are equal')
+        }
+        
+
+        if else==>>> if the evaluates the condition true or false
+
+        Exam=>>>
+        
+
+        let a = 20;
+
+        if(a ==14){
+            document.write('a is equal to 14  if no match expression two is run')
+        }else{
+            document.write('a is equal to 20 that match the expression2')
+
+        }
+            
+
+        if else if ==>>> if evaluates the condition only expression is true from severel expression
+
+        Exam==>>
+        
+
+        let i = 10;
+
+        if (i == 20) {
+            document.write('10 is not equal to 20')
+        } else if (i == 30) {
+            document.write('20 is not equal to 30')
+        } else if (i == 40) {
+            document.write('10 is not equal to 40')
+
+        } else {
+            document.write('10 is equal to last expression')
+        }
+     
+
+
+        var num = prompt('enter the value');
+
+        var fact = 1;
+
+        function factor(n) {
+            if (num > n) {
+                return;
+            }
+            var temp = fact
+
+            fact = fact * n
+
+            document.write(temp + " x " + "=" + fact)
+            n++;
+            factor(n)
+        }
+        factor(5)
+        */
+
+        let digit = prompt('Enter the number');
+
+        if (digit == 1) {
+            document.write(`the ${digit} is nor composite prime  number`)
+        } else if (digit < 1) {
+            document.write(`the ${digit} is not a prime number`)
+        } else {
+            for (var i = 2; i <= digit; i++) {
+                if (digit % i == 0) {
+                    document.write(`The ${digit} is not prime number`)
+                    break;
+                }
+                else {
+                    document.write(`The ${digit} is prime number`)
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

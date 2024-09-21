@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var today = new Date();
+
+        var day = today.getDay();
+
+        var exatday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        document.write("Today is : " + exatday[day] + " .");
+
+        var minut = today.getMinutes();
+        var hour = today.getHours();
+        var sec = today.getSeconds();
+
+        var spec = (hour >= 12) ? "pm" : "am";
+
+        hour = (hour >= 12) ? hour - 12 : hour;
+
+        if (hour === 0 && spec === 'pm') {
+            if (minut === 0 && sec === 0) {
+                hour = 12;
+                spec = "moon"
+            } else {
+                hour = 12;
+                spec = 'pm'
+            }
+        }
+        if (hour === 0 && spec === "am") {
+            if (minut === 0 && sec == 0) {
+                hour = 12;
+                spec = "midnight"
+            }
+        }
+
+        document.write('Current Time : ' + hour + spec + ": " + minut + ":" + sec)
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
