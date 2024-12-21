@@ -1,0 +1,8 @@
+class hello;
+public static void main;
+system.out. print' hello world'
+int =333;
+byte =127;
+short=344;
+long=12345l;
+float = 9.9f;
